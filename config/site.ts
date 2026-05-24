@@ -3,10 +3,6 @@
 // Edit this file to customize your site
 // ============================================
 
-const repo = "kinemium-engine-landing-page"
-const basePath = process.env.NODE_ENV === "production" ? `/${repo}` : ""
-const assetPath = (path: string) => `${basePath}${path}`
-
 export const siteConfig = {
   // ---- BRANDING ----
   name: "Kinemium",
@@ -15,10 +11,10 @@ export const siteConfig = {
 
   // ---- IMAGES ----
   images: {
-    logo: assetPath("/logo.png"),
-    heroBg: assetPath("/hero-bg.png"),
-    examplePart: assetPath("/example-part.jpg"),
-    exampleInput: assetPath("/example-input.jpg"),
+    logo: "/logo.png",
+    heroBg: "/hero-bg.png",
+    examplePart: "/example-part.jpg",
+    exampleInput: "/example-input.jpg",
   },
 
   // ---- LINKS ----
@@ -120,7 +116,7 @@ export const siteConfig = {
       {
         title: "Create a Part",
         description: "Spawn a basic part in the workspace",
-        image: assetPath("/part.png"),
+        image: "/part.png",
         code: `local part = Instance.new("Part")
 part.Name = "MyPart"
 part.Size = Vector3.new(4, 2, 4)
