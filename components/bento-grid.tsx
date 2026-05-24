@@ -1,11 +1,11 @@
 "use client"
 
-import { motion, useInView } from "framer-motion"
+import { motion, useInView, type Variants } from "framer-motion"
 import { useRef, useEffect, useState } from "react"
 import { Code, Gamepad2, Users, Puzzle, Box, Cpu } from "lucide-react"
 import { siteConfig } from "@/config/site"
 
-const containerVariants = {
+const containerVariants: Variants = {
   hidden: {},
   visible: {
     transition: {
@@ -14,7 +14,7 @@ const containerVariants = {
   },
 }
 
-const itemVariants = {
+const itemVariants: Variants = {
   hidden: { opacity: 0, y: 20 },
   visible: {
     opacity: 1,
