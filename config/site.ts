@@ -29,7 +29,7 @@ export const siteConfig = {
 
   // ---- VERSION / STATUS ----
   version: "Alpha",
-  status: "Alpha - Full release later this year",
+  status: "Alpha: Full release later this year",
 
   // ---- HERO SECTION ----
   hero: {
@@ -51,6 +51,7 @@ export const siteConfig = {
     { label: "Discord", href: "https://discord.gg/7byuxfYtAP" },
     { label: "Plugins", href: "https://quadigen.github.io/Kinemium-Engine-Plugins/" },
     { label: "Forums", href: "https://kinemiumengine.discourse.group/" },
+    { label: "Showcase", href: "https://kinemiumengine.discourse.group/c/showcase/9" },
   ],
 
   // ---- TECHNOLOGIES / BUILT WITH ----

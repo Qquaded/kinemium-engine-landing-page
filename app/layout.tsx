@@ -3,6 +3,7 @@ import type { Metadata } from "next"
 import { Montserrat } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import { siteConfig } from "@/config/site"
+import { ThemeProvider } from "@/components/theme-provider"
 import "./globals.css"
 
 const montserrat = Montserrat({
@@ -22,11 +23,13 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className="dark bg-background">
+    <html lang="en" suppressHydrationWarning>
       <body className={`${montserrat.variable} font-sans antialiased`}>
-        <div className="noise-overlay" aria-hidden="true" />
-        {children}
-        <Analytics />
+        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
+          <div className="noise-overlay" aria-hidden="true" />
+          {children}
+          <Analytics />
+        </ThemeProvider>
       </body>
     </html>
   )

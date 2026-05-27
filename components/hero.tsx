@@ -31,8 +31,8 @@ export function Hero() {
           priority
         />
         {/* Dark overlay for text readability */}
-        <div className="absolute inset-0 bg-gradient-to-r from-zinc-950/95 via-zinc-950/80 to-zinc-950/60" />
-        <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-transparent to-zinc-950/50" />
+        <div className="absolute inset-0 bg-gradient-to-r from-zinc-50/95 dark:from-zinc-950/95 via-zinc-50/80 dark:via-zinc-950/80 to-zinc-50/60 dark:to-zinc-950/60" />
+        <div className="absolute inset-0 bg-gradient-to-t from-zinc-50 dark:from-zinc-950 via-transparent to-zinc-50/50 dark:to-zinc-950/50" />
       </div>
 
       <div className="relative z-10 w-full max-w-7xl mx-auto px-6 lg:px-8 py-32">
@@ -51,7 +51,7 @@ export function Hero() {
           </motion.div>
 
           {/* Headline */}
-          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-white mb-6">
+          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-zinc-900 dark:text-white mb-6">
             <span className="block overflow-hidden">
               <motion.span className="block" variants={textRevealVariants} initial="hidden" animate="visible" custom={0}>
                 {siteConfig.hero.headline.line1}{" "}
@@ -76,7 +76,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.5 }}
-            className="text-lg sm:text-xl text-zinc-300 max-w-xl mb-10 leading-relaxed"
+            className="text-lg sm:text-xl text-zinc-700 dark:text-zinc-300 max-w-xl mb-10 leading-relaxed"
           >
             {siteConfig.hero.subheadline}
           </motion.p>
@@ -97,7 +97,7 @@ export function Hero() {
                 {siteConfig.hero.ctaPrimary}
               </a>
             </Button>
-            <span className="px-4 py-2 bg-orange-500 text-white font-bold rounded-lg text-base">
+            <span className="px-4 py-2 bg-orange-500 text-zinc-900 dark:text-white font-bold rounded-lg text-base">
               {siteConfig.version}
             </span>
             <Button
@@ -118,7 +118,7 @@ export function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.7 }}
-            className="text-sm text-zinc-400"
+            className="text-sm text-zinc-600 dark:text-zinc-400"
           >
             Check out the{" "}
             <a href={siteConfig.links.gettingStarted} className="text-orange-400 hover:text-orange-300 underline underline-offset-2">

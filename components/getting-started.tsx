@@ -22,10 +22,10 @@ export function GettingStarted() {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
+          <h2 className="text-3xl sm:text-4xl font-bold text-zinc-900 dark:text-white mb-4">
             {siteConfig.gettingStarted.title}
           </h2>
-          <p className="text-zinc-400 max-w-xl mx-auto">
+          <p className="text-zinc-600 dark:text-zinc-400 max-w-xl mx-auto">
             {siteConfig.gettingStarted.subtitle}
           </p>
         </motion.div>
@@ -37,8 +37,8 @@ export function GettingStarted() {
           transition={{ duration: 0.6, delay: 0.1 }}
           className="mb-8"
         >
-          <div className="bg-zinc-900/50 border border-zinc-800 rounded-xl p-6">
-            <h3 className="text-lg font-semibold text-white mb-4">Prerequisites</h3>
+          <div className="bg-zinc-100 dark:bg-zinc-100/ dark:bg-zinc-900/50 border border-zinc-200 dark:border-zinc-800 rounded-xl p-6">
+            <h3 className="text-lg font-semibold text-zinc-900 dark:text-white mb-4">Prerequisites</h3>
             <div className="grid sm:grid-cols-2 gap-4">
               {prerequisites.map((prereq) => (
                 <div key={prereq.name} className="flex items-center gap-3">
@@ -46,13 +46,13 @@ export function GettingStarted() {
                     <span className="text-orange-500 font-bold text-sm">{prereq.initial}</span>
                   </div>
                   <div>
-                    <p className="text-white text-sm font-medium">{prereq.name}</p>
-                    <p className="text-zinc-500 text-xs">{prereq.description}</p>
+                    <p className="text-zinc-900 dark:text-white text-sm font-medium">{prereq.name}</p>
+                    <p className="text-zinc-500 dark:text-zinc-400 text-xs">{prereq.description}</p>
                   </div>
                 </div>
               ))}
             </div>
-            <p className="text-zinc-500 text-sm mt-4">
+            <p className="text-zinc-500 dark:text-zinc-400 text-sm mt-4">
               Zune and darklua are installed automatically via Rokit.
             </p>
           </div>
@@ -68,33 +68,33 @@ export function GettingStarted() {
           {steps.map((step, index) => (
             <div
               key={index}
-              className="bg-zinc-900/50 border border-zinc-800 rounded-xl overflow-hidden"
+              className="bg-zinc-100 dark:bg-zinc-100/ dark:bg-zinc-900/50 border border-zinc-200 dark:border-zinc-800 rounded-xl overflow-hidden"
             >
               <button
                 onClick={() => setExpandedStep(expandedStep === index ? null : index)}
-                className="w-full flex items-center gap-4 p-4 text-left hover:bg-zinc-800/30 transition-colors"
+                className="w-full flex items-center gap-4 p-4 text-left hover:bg-zinc-200 dark:bg-zinc-200/ dark:bg-zinc-800/30 transition-colors"
               >
                 <div className="w-8 h-8 rounded-full bg-orange-500 flex items-center justify-center flex-shrink-0">
-                  <span className="text-white font-bold text-sm">{index + 1}</span>
+                  <span className="text-zinc-900 dark:text-white font-bold text-sm">{index + 1}</span>
                 </div>
-                <span className="text-white font-medium flex-1">{step.title}</span>
+                <span className="text-zinc-900 dark:text-white font-medium flex-1">{step.title}</span>
                 {expandedStep === index ? (
-                  <ChevronDown className="w-5 h-5 text-zinc-500" />
+                  <ChevronDown className="w-5 h-5 text-zinc-500 dark:text-zinc-400" />
                 ) : (
-                  <ChevronRight className="w-5 h-5 text-zinc-500" />
+                  <ChevronRight className="w-5 h-5 text-zinc-500 dark:text-zinc-400" />
                 )}
               </button>
               {expandedStep === index && (
                 <div className="px-4 pb-4 pl-16">
                   {step.isCode ? (
-                    <div className="bg-zinc-950 rounded-lg p-3 font-mono text-sm text-orange-400 overflow-x-auto">
+                    <div className="bg-zinc-50 dark:bg-zinc-950 rounded-lg p-3 font-mono text-sm text-orange-400 overflow-x-auto">
                       {step.content}
                     </div>
                   ) : (
-                    <p className="text-zinc-400 text-sm">{step.content}</p>
+                    <p className="text-zinc-600 dark:text-zinc-400 text-sm">{step.content}</p>
                   )}
                   {step.description && (
-                    <p className="text-zinc-500 text-sm mt-2">{step.description}</p>
+                    <p className="text-zinc-500 dark:text-zinc-400 text-sm mt-2">{step.description}</p>
                   )}
                   {step.link && (
                     <a
@@ -120,31 +120,31 @@ export function GettingStarted() {
         >
           <button
             onClick={() => setShowModes(!showModes)}
-            className="w-full bg-zinc-900/50 border border-zinc-800 rounded-xl p-4 flex items-center justify-between hover:bg-zinc-800/30 transition-colors"
+            className="w-full bg-zinc-100 dark:bg-zinc-100/ dark:bg-zinc-900/50 border border-zinc-200 dark:border-zinc-800 rounded-xl p-4 flex items-center justify-between hover:bg-zinc-200 dark:bg-zinc-200/ dark:bg-zinc-800/30 transition-colors"
           >
-            <span className="text-white font-medium">Execution Modes</span>
+            <span className="text-zinc-900 dark:text-white font-medium">Execution Modes</span>
             {showModes ? (
-              <ChevronDown className="w-5 h-5 text-zinc-500" />
+              <ChevronDown className="w-5 h-5 text-zinc-500 dark:text-zinc-400" />
             ) : (
-              <ChevronRight className="w-5 h-5 text-zinc-500" />
+              <ChevronRight className="w-5 h-5 text-zinc-500 dark:text-zinc-400" />
             )}
           </button>
           {showModes && (
-            <div className="mt-3 bg-zinc-900/50 border border-zinc-800 rounded-xl overflow-hidden">
+            <div className="mt-3 bg-zinc-100 dark:bg-zinc-100/ dark:bg-zinc-900/50 border border-zinc-200 dark:border-zinc-800 rounded-xl overflow-hidden">
               <table className="w-full text-sm">
                 <thead>
-                  <tr className="border-b border-zinc-800">
-                    <th className="text-left p-3 text-zinc-400 font-medium">Flag</th>
-                    <th className="text-left p-3 text-zinc-400 font-medium">Mode</th>
-                    <th className="text-left p-3 text-zinc-400 font-medium hidden sm:table-cell">Description</th>
+                  <tr className="border-b border-zinc-200 dark:border-zinc-800">
+                    <th className="text-left p-3 text-zinc-600 dark:text-zinc-400 font-medium">Flag</th>
+                    <th className="text-left p-3 text-zinc-600 dark:text-zinc-400 font-medium">Mode</th>
+                    <th className="text-left p-3 text-zinc-600 dark:text-zinc-400 font-medium hidden sm:table-cell">Description</th>
                   </tr>
                 </thead>
                 <tbody>
                   {executionModes.map((mode, index) => (
-                    <tr key={index} className="border-b border-zinc-800/50 last:border-0">
+                    <tr key={index} className="border-b border-zinc-200 dark:border-zinc-800/50 last:border-0">
                       <td className="p-3 font-mono text-orange-400">{mode.flag}</td>
-                      <td className="p-3 text-white">{mode.mode}</td>
-                      <td className="p-3 text-zinc-500 hidden sm:table-cell">{mode.description}</td>
+                      <td className="p-3 text-zinc-900 dark:text-white">{mode.mode}</td>
+                      <td className="p-3 text-zinc-500 dark:text-zinc-400 hidden sm:table-cell">{mode.description}</td>
                     </tr>
                   ))}
                 </tbody>
@@ -164,7 +164,7 @@ export function GettingStarted() {
             href={siteConfig.links.documentation}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-5 py-2.5 bg-zinc-800 hover:bg-zinc-700 text-white rounded-lg transition-colors text-sm font-medium"
+            className="inline-flex items-center gap-2 px-5 py-2.5 bg-zinc-200 dark:bg-zinc-800 hover:bg-zinc-300 dark:bg-zinc-700 text-zinc-900 dark:text-white rounded-lg transition-colors text-sm font-medium"
           >
             Read full documentation on DeepWiki <ExternalLink className="w-4 h-4" />
           </a>

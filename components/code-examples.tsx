@@ -22,7 +22,7 @@ function highlightLuau(code: string) {
 
     // comments
     .replace(/--(.*)/g, (_, c) =>
-      `<span class="text-zinc-500">--${c}</span>`
+      `<span class="text-zinc-500 dark:text-zinc-400">--${c}</span>`
     )
 
     // keywords (word-safe)
@@ -52,10 +52,10 @@ export function CodeExamples() {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
+          <h2 className="text-3xl sm:text-4xl font-bold text-zinc-900 dark:text-white mb-4">
             {siteConfig.codeExamples.title}
           </h2>
-          <p className="text-zinc-400 max-w-2xl mx-auto">
+          <p className="text-zinc-600 dark:text-zinc-400 max-w-2xl mx-auto">
             {siteConfig.codeExamples.subtitle}
           </p>
         </motion.div>
@@ -73,8 +73,8 @@ export function CodeExamples() {
               onClick={() => setActiveExample(index)}
               className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
                 activeExample === index
-                  ? "bg-orange-500 text-white"
-                  : "bg-zinc-800 text-zinc-400 hover:bg-zinc-700 hover:text-zinc-300"
+                  ? "bg-orange-500 text-zinc-900 dark:text-white"
+                  : "bg-zinc-200 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 hover:bg-zinc-300 dark:bg-zinc-700 hover:text-zinc-700 dark:text-zinc-300"
               }`}
             >
               {example.title}
@@ -90,30 +90,30 @@ export function CodeExamples() {
           className="grid lg:grid-cols-2 gap-6"
         >
           {/* Image preview */}
-          <div className="relative aspect-video bg-zinc-900 rounded-xl overflow-hidden border border-zinc-800">
+          <div className="relative aspect-video bg-zinc-100 dark:bg-zinc-900 rounded-xl overflow-hidden border border-zinc-200 dark:border-zinc-800">
             <Image
               src={examples[activeExample].image}
               alt={examples[activeExample].title}
               fill
               className="object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-zinc-900/80 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-zinc-100 dark:from-zinc-900/80 to-transparent" />
             <div className="absolute bottom-4 left-4">
-              <span className="px-3 py-1 bg-zinc-800/80 backdrop-blur-sm rounded-full text-xs text-zinc-300">
+              <span className="px-3 py-1 bg-zinc-200 dark:bg-zinc-200/ dark:bg-zinc-800/80 backdrop-blur-sm rounded-full text-xs text-zinc-700 dark:text-zinc-300">
                 {examples[activeExample].description}
               </span>
             </div>
           </div>
 
           {/* Code block */}
-          <div className="bg-zinc-900 rounded-xl border border-zinc-800 overflow-hidden">
-            <div className="flex items-center gap-2 px-4 py-3 border-b border-zinc-800 bg-zinc-900/50">
+          <div className="bg-zinc-100 dark:bg-zinc-900 rounded-xl border border-zinc-200 dark:border-zinc-800 overflow-hidden">
+            <div className="flex items-center gap-2 px-4 py-3 border-b border-zinc-200 dark:border-zinc-800 bg-zinc-100 dark:bg-zinc-100/ dark:bg-zinc-900/50">
               <div className="flex gap-1.5">
-                <div className="w-3 h-3 rounded-full bg-zinc-700" />
-                <div className="w-3 h-3 rounded-full bg-zinc-700" />
-                <div className="w-3 h-3 rounded-full bg-zinc-700" />
+                <div className="w-3 h-3 rounded-full bg-zinc-300 dark:bg-zinc-700" />
+                <div className="w-3 h-3 rounded-full bg-zinc-300 dark:bg-zinc-700" />
+                <div className="w-3 h-3 rounded-full bg-zinc-300 dark:bg-zinc-700" />
               </div>
-              <span className="text-xs text-zinc-500 ml-2">script.luau</span>
+              <span className="text-xs text-zinc-500 dark:text-zinc-400 ml-2">script.luau</span>
             </div>
             <pre className="p-4 overflow-x-auto">
               <code
