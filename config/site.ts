@@ -46,7 +46,7 @@ export const siteConfig = {
 
   // ---- NAVBAR ----
   navItems: [
-    { label: "Features", href: "#features" },
+    { label: "Articles", href: "/articles" },
     { label: "Docs", href: "https://deepwiki.com/Qquaded/Kinemium-Engine" },
     { label: "Discord", href: "https://discord.gg/7byuxfYtAP" },
     { label: "Plugins", href: "https://quadigen.github.io/Kinemium-Engine-Plugins/" },
@@ -169,6 +169,26 @@ part.Parent = workspace`,
       { flag: "--editor", mode: "Editor", description: "Enables the built-in studio/editor UI" },
       { flag: "--kilang", mode: "REPL", description: "Kilang terminal REPL; combinable with other flags" },
     ],
+  },
+
+  // ---- PREVIEWS ----
+  previews: {
+    title: "Engine Previews",
+    subtitle: "A showcase of the engine.",
+    items: [
+      {
+        title: "Editor Interface",
+        image: "/editor-preview.png",
+      },
+      {
+        title: "Part Properties",
+        image: "/part.png",
+      },
+      {
+        title: "3D Rendering",
+        image: "/house.webp",
+      }
+    ]
   },
 
   // ---- FINAL CTA ----
