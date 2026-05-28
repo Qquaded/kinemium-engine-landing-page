@@ -15,6 +15,7 @@ interface Props {
 
 export async function generateStaticParams() {
   const slugs = getAllSlugs()
+  if (slugs.length === 0) return [{ slug: '_empty' }]
   return slugs.map(slug => ({ slug }))
 }
 
