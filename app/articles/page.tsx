@@ -3,6 +3,8 @@ import { siteConfig } from "@/config/site"
 import Link from "next/link"
 import { Calendar, Tag, ArrowRight, Rss, Eye, Heart } from "lucide-react"
 import { AuthorCard } from "@/components/author-card"
+import { Navbar } from "@/components/navbar"
+import { Footer } from "@/components/footer"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
@@ -23,27 +25,7 @@ export default function ArticlesPage() {
 
   return (
     <div className="min-h-screen bg-zinc-50 dark:bg-zinc-950">
-      {/* Header */}
-      <div className="border-b border-zinc-200 dark:border-zinc-800 bg-zinc-50/80 dark:bg-zinc-950/80 backdrop-blur-md sticky top-0 z-10">
-        <div className="max-w-4xl mx-auto px-6 py-4 flex items-center justify-between">
-          <Link
-            href="/"
-            className="flex items-center gap-2 text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors text-sm"
-          >
-            <img src={siteConfig.images.logo} alt={siteConfig.name} className="w-6 h-6 rounded" />
-            <span>{siteConfig.name}</span>
-          </Link>
-          <a
-            href="https://kinemiumengine.discourse.group/c/announcements/8"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-1.5 text-xs text-zinc-500 dark:text-zinc-500 hover:text-orange-500 transition-colors"
-          >
-            <Rss size={13} />
-            <span>Forum</span>
-          </a>
-        </div>
-      </div>
+      <Navbar />
 
       <main className="max-w-4xl mx-auto px-6 py-20">
         {/* Hero */}
@@ -144,6 +126,7 @@ export default function ArticlesPage() {
           </div>
         )}
       </main>
+      <Footer />
     </div>
   )
 }

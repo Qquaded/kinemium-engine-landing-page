@@ -49,7 +49,7 @@ export const siteConfig = {
     { label: "Articles", href: "/articles" },
     { label: "Docs", href: "https://deepwiki.com/Qquaded/Kinemium-Engine" },
     { label: "Discord", href: "https://discord.gg/7byuxfYtAP" },
-    { label: "Plugins", href: "https://quadigen.github.io/Kinemium-Engine-Plugins/" },
+    { label: "Plugins", href: "/marketplace" },
     { label: "Forums", href: "https://kinemiumengine.discourse.group/" },
     { label: "Showcase", href: "https://kinemiumengine.discourse.group/c/showcase/9" },
   ],
@@ -215,7 +215,7 @@ part.Parent = workspace`,
         { label: "Codeberg", href: "https://codeberg.org/Qquaded/Kinemium-Engine" },
         { label: "GitLab", href: "https://gitlab.com/quadigen/Kinemium-Engine" },
         { label: "Documentation", href: "https://deepwiki.com/Qquaded/Kinemium-Engine" },
-        { label: "Plugins", href: "https://quadigen.github.io/Kinemium-Engine-Plugins/" },
+        { label: "Plugins", href: "/marketplace" },
       ],
 
       Community: [
