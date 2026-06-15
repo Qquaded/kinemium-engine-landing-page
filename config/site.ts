@@ -202,7 +202,7 @@ part.Parent = workspace`,
   // ---- FINAL CTA ----
   finalCta: {
     title: "Try and test",
-    subtitle: "Shoo! Shoo! Get the engine is here!!",
+    subtitle: "hi please run the engine thank you",
     ctaPrimary: "Get Kinemium",
     ctaSecondary: "Join the Community",
     cloneCommand: "git clone https://github.com/Qquaded/Kinemium-Engine.git",
