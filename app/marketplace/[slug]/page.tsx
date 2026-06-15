@@ -226,7 +226,6 @@ export default async function PluginDetailsPage({ params }: { params: Promise<{ 
                   <div>
                     <div className="flex items-center gap-1.5">
                       <span className="font-bold text-zinc-900 dark:text-zinc-200">{plugin.manifest?.author}</span>
-                      <span className="text-yellow-500 text-xs">👑</span>
                     </div>
                     <span className="text-xs text-zinc-500 dark:text-zinc-500">Owner</span>
                   </div>

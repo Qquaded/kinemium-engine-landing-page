@@ -7,7 +7,7 @@ export const siteConfig = {
   // ---- BRANDING ----
   name: "Kinemium",
   tagline: "Lua-based sandboxed game engine.",
-  description: "A sandboxed game engine with built-in editor, multiplayer support, and modding capabilities. MIT licensed.",
+  description: "A game engine based in Luau with focus on modding and extensibility.",
 
   // ---- IMAGES ----
   images: {
@@ -25,17 +25,18 @@ export const siteConfig = {
     gettingStarted: "https://kinemiumengine.discourse.group/t/guide-to-running-kinemium-engine/25",
     documentation: "https://deepwiki.com/Qquaded/Kinemium-Engine/2-getting-started",
     rokit: "https://github.com/rojo-rbx/rokit",
+    roadmap: "https://trello.com/b/YgyKCjIN/kinemium-engine-roadmap",
   },
 
   // ---- VERSION / STATUS ----
-  version: "Alpha",
-  status: "Alpha: Full release later this year",
+  version: "version 1.10.7",
+  status: "Full release later this year",
 
   // ---- HERO SECTION ----
   hero: {
     headline: {
       line1: "A",
-      accent1: "lightweight",
+      accent1: "simple",
       line1End: ", open-source",
       line2: "game engine.",
     },
@@ -62,42 +63,49 @@ export const siteConfig = {
     { name: "Manifold" },
     { name: "GNS" },
     { name: "NFD" },
+    { name: "Something technology something moving idk" },
   ],
 
   // ---- FEATURES ----
   features: {
     title: "Powerful game development",
-    subtitle: "Everything you need to create, test, and ship games.",
+    subtitle: "Everything you need to create, test, and ship games. (and mod games, forgot to add that part)",
     items: [
       {
         id: "editor",
         title: "Built-in Editor",
-        description: "Script, build, and playtest without leaving the engine.",
+        description: "Script, build, and playtest without leaving the engine",
         icon: "Code",
       },
       {
         id: "multiplayer",
         title: "Multiplayer",
-        description: "Server/client architecture out of the box.",
+        description: "Server/client architecture built in",
         icon: "Users",
       },
       {
         id: "scripting",
         title: "Luau Scripting",
-        description: "Familiar syntax with powerful features.",
+        description: "Familiar syntax with powerful features",
         icon: "Gamepad2",
       },
       {
         id: "modding",
         title: "Mod Support",
-        description: "Let players extend your games.",
+        description: "Let players extend your games",
         icon: "Puzzle",
       },
       {
         id: "physics",
         title: "Physics Engines",
-        description: "Jolt, Box2D, and Manifold included.",
+        description: "Jolt and Box2D included.",
         icon: "Box",
+      },
+      {
+        id: "csg",
+        title: "CSG Support",
+        description: "Create complex models with ease",
+        icon: "Folder",
       },
       {
         id: "platforms",
@@ -194,7 +202,7 @@ part.Parent = workspace`,
   // ---- FINAL CTA ----
   finalCta: {
     title: "Try and test",
-    subtitle: "Clone the repo, run the engine, and create something awesome.",
+    subtitle: "Shoo! Shoo! Get the engine is here!!",
     ctaPrimary: "Get Kinemium",
     ctaSecondary: "Join the Community",
     cloneCommand: "git clone https://github.com/Qquaded/Kinemium-Engine.git",
@@ -227,7 +235,7 @@ part.Parent = workspace`,
       ],
     },
 
-    copyright: "Kinemium Engine by Qquaded. Not affiliated with Roblox Corporation.",
+    copyright: "Kinemium Engine with love by Qquaded. Not affiliated with Roblox Corporation.",
     license: "MIT Licensed",
   }
 }
