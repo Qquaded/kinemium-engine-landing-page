@@ -2,7 +2,7 @@
 
 import type React from "react"
 
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import Link from "next/link"
 import { useRouter } from "next/navigation"
 import { Loader2 } from "lucide-react"
@@ -10,7 +10,7 @@ import { AuthShell } from "@/components/auth/auth-shell"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
-import { login, setToken, ApiError } from "@/lib/api"
+import { login, setToken, setUserName, getToken, ApiError } from "@/lib/api"
 
 export default function LoginPage() {
   const router = useRouter()
@@ -19,6 +19,11 @@ export default function LoginPage() {
   const [error, setError] = useState<string | null>(null)
   const [loading, setLoading] = useState(false)
 
+  // Already logged in? Skip straight to the dashboard.
+  useEffect(() => {
+    if (getToken()) router.replace("/dashboard")
+  }, [router])
+
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
     setError(null)
@@ -26,6 +31,7 @@ export default function LoginPage() {
     try {
       const { token } = await login(email, password)
       setToken(token)
+      setUserName(email.split("@")[0])
       router.replace("/dashboard")
     } catch (err) {
       setError(err instanceof ApiError ? err.message : "Something went wrong. Please try again.")

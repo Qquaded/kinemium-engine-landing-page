@@ -29,6 +29,25 @@ export function useLogout() {
   }
 }
 
+// Reactively reports whether a token exists in this browser.
+// Used by the marketing navbar so returning users see a logged-in state.
+export function useIsLoggedIn() {
+  const [loggedIn, setLoggedIn] = useState<boolean | null>(null)
+
+  useEffect(() => {
+    const update = () => setLoggedIn(Boolean(getToken()))
+    update()
+    window.addEventListener("storage", update)
+    window.addEventListener("focus", update)
+    return () => {
+      window.removeEventListener("storage", update)
+      window.removeEventListener("focus", update)
+    }
+  }, [])
+
+  return loggedIn
+}
+
 // ---- Local team tracking ----
 // The API has no "list my teams" endpoint, so we remember the teams
 // a user creates or chooses to track in this browser.

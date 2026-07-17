@@ -6,11 +6,13 @@ import { Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { ThemeToggle } from "@/components/theme-toggle"
 import { siteConfig } from "@/config/site"
+import { useIsLoggedIn } from "@/lib/use-auth"
 
 export function Navbar() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const navRef = useRef<HTMLDivElement>(null)
+  const loggedIn = useIsLoggedIn()
 
   return (
     <motion.header
@@ -55,19 +57,31 @@ export function Navbar() {
         {/* CTA Buttons */}
         <div className="hidden md:flex items-center gap-3">
           <ThemeToggle />
-          <a
-            href="/login"
-            className="text-sm text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors"
-          >
-            Log in
-          </a>
-          <Button
-            asChild
-            size="sm"
-            className="shimmer-btn bg-orange-500 text-zinc-900 dark:text-white hover:bg-orange-600 rounded-full px-4"
-          >
-            <a href="/signup">Sign up</a>
-          </Button>
+          {loggedIn ? (
+            <Button
+              asChild
+              size="sm"
+              className="shimmer-btn bg-orange-500 text-zinc-900 dark:text-white hover:bg-orange-600 rounded-full px-4"
+            >
+              <a href="/dashboard">Open Dashboard</a>
+            </Button>
+          ) : (
+            <>
+              <a
+                href="/login"
+                className="text-sm text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors"
+              >
+                Log in
+              </a>
+              <Button
+                asChild
+                size="sm"
+                className="shimmer-btn bg-orange-500 text-zinc-900 dark:text-white hover:bg-orange-600 rounded-full px-4"
+              >
+                <a href="/signup">Sign up</a>
+              </Button>
+            </>
+          )}
         </div>
 
         {/* Mobile Menu Button */}
@@ -103,16 +117,24 @@ export function Navbar() {
               </a>
             ))}
             <hr className="border-zinc-200 dark:border-zinc-800 my-2" />
-            <a
-              href="/login"
-              className="px-4 py-3 text-sm text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white hover:bg-zinc-200 dark:hover:bg-zinc-800 rounded-lg transition-colors"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Log in
-            </a>
-            <Button asChild className="shimmer-btn bg-orange-500 text-zinc-900 dark:text-white hover:bg-orange-600 rounded-full">
-              <a href="/signup">Sign up</a>
-            </Button>
+            {loggedIn ? (
+              <Button asChild className="shimmer-btn bg-orange-500 text-zinc-900 dark:text-white hover:bg-orange-600 rounded-full">
+                <a href="/dashboard">Open Dashboard</a>
+              </Button>
+            ) : (
+              <>
+                <a
+                  href="/login"
+                  className="px-4 py-3 text-sm text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white hover:bg-zinc-200 dark:hover:bg-zinc-800 rounded-lg transition-colors"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Log in
+                </a>
+                <Button asChild className="shimmer-btn bg-orange-500 text-zinc-900 dark:text-white hover:bg-orange-600 rounded-full">
+                  <a href="/signup">Sign up</a>
+                </Button>
+              </>
+            )}
           </div>
         </motion.div>
       )}

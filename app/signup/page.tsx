@@ -2,7 +2,7 @@
 
 import type React from "react"
 
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import Link from "next/link"
 import { useRouter } from "next/navigation"
 import { Loader2 } from "lucide-react"
@@ -10,7 +10,7 @@ import { AuthShell } from "@/components/auth/auth-shell"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
-import { register, login, setToken, ApiError } from "@/lib/api"
+import { register, login, setToken, setUserName, getToken, ApiError } from "@/lib/api"
 
 export default function SignupPage() {
   const router = useRouter()
@@ -19,6 +19,11 @@ export default function SignupPage() {
   const [password, setPassword] = useState("")
   const [error, setError] = useState<string | null>(null)
   const [loading, setLoading] = useState(false)
+
+  // Already logged in? Skip straight to the dashboard.
+  useEffect(() => {
+    if (getToken()) router.replace("/dashboard")
+  }, [router])
 
   function validate(): string | null {
     if (username.trim().length < 3) return "Username must be at least 3 characters."
@@ -41,6 +46,7 @@ export default function SignupPage() {
       // Auto-login after successful registration.
       const { token } = await login(email, password)
       setToken(token)
+      setUserName(username.trim())
       router.replace("/dashboard")
     } catch (err) {
       setError(err instanceof ApiError ? err.message : "Something went wrong. Please try again.")

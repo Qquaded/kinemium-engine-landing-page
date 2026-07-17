@@ -7,6 +7,7 @@
 export const API_BASE = "https://msi.tail721598.ts.net"
 
 const TOKEN_KEY = "kinemium_token"
+const USER_KEY = "kinemium_user"
 
 export function getToken(): string | null {
   if (typeof window === "undefined") return null
@@ -21,6 +22,17 @@ export function setToken(token: string) {
 export function clearToken() {
   if (typeof window === "undefined") return
   window.localStorage.removeItem(TOKEN_KEY)
+  window.localStorage.removeItem(USER_KEY)
+}
+
+export function setUserName(name: string) {
+  if (typeof window === "undefined") return
+  window.localStorage.setItem(USER_KEY, name)
+}
+
+export function getUserName(): string | null {
+  if (typeof window === "undefined") return null
+  return window.localStorage.getItem(USER_KEY)
 }
 
 export class ApiError extends Error {
