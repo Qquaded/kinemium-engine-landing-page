@@ -49,16 +49,28 @@ async function request<T>(path: string, options: RequestOptions = {}): Promise<T
     if (token) headers["Authorization"] = `Bearer ${token}`
   }
 
+  const url = `${API_BASE}${path}`
+  console.log("[v0] API request:", method, url, body ?? "")
+
   let res: Response
   try {
-    res = await fetch(`${API_BASE}${path}`, {
+    res = await fetch(url, {
       method,
       headers,
       body: body !== undefined ? JSON.stringify(body) : undefined,
+      mode: "cors",
     })
-  } catch {
-    throw new ApiError("Could not reach the server. Please try again.", 0)
+  } catch (err) {
+    console.log("[v0] API network/CORS failure:", err)
+    throw new ApiError(
+      `Could not reach the API at ${API_BASE}. This is usually a CORS or private-network (Tailscale) issue — the server must allow this site's origin, and your browser must be on the tailnet. Original error: ${
+        err instanceof Error ? err.message : String(err)
+      }`,
+      0,
+    )
   }
+
+  console.log("[v0] API response:", res.status, url)
 
   if (!res.ok) {
     let message = `Request failed (${res.status})`
