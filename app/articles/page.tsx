@@ -40,7 +40,7 @@ export default function ArticlesPage() {
           <p className="text-lg text-zinc-600 dark:text-zinc-400 max-w-xl">
             Engine updates, release notes, and developer news — synced automatically from the{" "}
             <a
-              href="https://kinemiumengine.discourse.group/c/announcements/8"
+              href="https://forums.quadigen.com/c/announcements/8"
               target="_blank"
               rel="noopener noreferrer"
               className="text-orange-500 hover:text-orange-400 underline underline-offset-2"

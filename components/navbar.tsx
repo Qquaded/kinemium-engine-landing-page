@@ -60,7 +60,7 @@ export function Navbar() {
             size="sm"
             className="shimmer-btn bg-orange-500 text-zinc-900 dark:text-white hover:bg-orange-600 rounded-full px-4"
           >
-            <a href={"https://kinemiumengine.discourse.group/t/guide-to-running-kinemium-engine/25"}>Get Started</a>
+            <a href={"https://forums.quadigen.com/t/guide-to-running-kinemium-engine/25"}>Get Started</a>
           </Button>
         </div>
 

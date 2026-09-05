@@ -22,7 +22,7 @@ export const siteConfig = {
     github: "https://github.com/Qquaded/Kinemium-Engine",
     releases: "https://github.com/Qquaded/Kinemium-Engine/releases",
     discord: "https://discord.gg/7byuxfYtAP",
-    gettingStarted: "https://kinemiumengine.discourse.group/t/guide-to-running-kinemium-engine/25",
+    gettingStarted: "https://forums.quadigen.com/t/guide-to-running-kinemium-engine/25",
     documentation: "https://deepwiki.com/Qquaded/Kinemium-Engine/2-getting-started",
     rokit: "https://github.com/rojo-rbx/rokit",
     roadmap: "https://trello.com/b/YgyKCjIN/kinemium-engine-roadmap",
@@ -51,8 +51,8 @@ export const siteConfig = {
     { label: "Docs", href: "https://deepwiki.com/Qquaded/Kinemium-Engine" },
     { label: "Discord", href: "https://discord.gg/7byuxfYtAP" },
     { label: "Plugins", href: "/marketplace" },
-    { label: "Forums", href: "https://kinemiumengine.discourse.group/" },
-    { label: "Showcase", href: "https://kinemiumengine.discourse.group/c/showcase/9" },
+    { label: "Forums", href: "https://forums.quadigen.com/" },
+    { label: "Showcase", href: "https://forums.quadigen.com/c/showcase/9" },
   ],
 
   // ---- TECHNOLOGIES / BUILT WITH ----
@@ -228,7 +228,7 @@ part.Parent = workspace`,
 
       Community: [
         { label: "Discord", href: "https://discord.com/invite/7wKav5pCWg" },
-        { label: "Forums", href: "https://kinemiumengine.discourse.group/" },
+        { label: "Forums", href: "https://forums.quadigen.com/" },
         { label: "Uptime Status", href: "https://stats.uptimerobot.com/xVqd79vxeX" },
         { label: "Issues", href: "https://github.com/Qquaded/Kinemium-Engine/issues" },
         { label: "Discussions", href: "https://github.com/Qquaded/Kinemium-Engine/discussions" },

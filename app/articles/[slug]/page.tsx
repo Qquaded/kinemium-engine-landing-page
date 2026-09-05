@@ -42,7 +42,7 @@ export default async function ArticlePage({ params }: Props) {
   const article = getArticleBySlug(slug)
   if (!article) notFound()
 
-  const forumUrl = `https://kinemiumengine.discourse.group/t/${article.slug}/${article.id}`
+  const forumUrl = `https://forums.quadigen.com/t/${article.slug}/${article.id}`
 
   return (
     <div className="min-h-screen bg-zinc-50 dark:bg-zinc-950">
